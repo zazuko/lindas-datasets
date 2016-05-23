@@ -27,7 +27,7 @@
     .
 
 <org/FSO> a foaf:Organization, schema:GovernmentOrganization;
-    rdfs:label "Swiss Federal Statistical Office"@en;
+    rdfs:label "Swiss Federal Statistical Office (FSO)"@en;
     rdfs:label "Bundesamt für Statistik (BFS)"@de;
     rdfs:label "Ufficio federale di statistica (UST)"@it;
     rdfs:label "Office fédéral de la statistique (OFS)"@fr;
