@@ -9,6 +9,7 @@
     <script src="//cdn.rawgit.com/retog/rdf-store-ldp-browser/v0.3.0-rc2f/dist/rdf-store-ldp.js"></script>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="//cdn.rawgit.com/rdf2h/ld2h/v0.4.0/dist/ld2h.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
     <script id="matchers" type="text/turtle">
     @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
     @prefix r2h: <http://rdf2h.github.io/2015/rdf2h#> .
@@ -64,6 +65,19 @@
       r2h:triplePattern [
         r2h:subject r2h:this;
         r2h:predicate rdf:type;
+        r2h:object foaf:Person;
+      ];
+      r2h:template [
+        r2h:context r2h:Default;
+        r2h:mustache """
+        <a href="{{{.}}}">{{foaf:givenName}} {{foaf:familyName}}</a>
+        """
+      ]
+    ].
+    [ a r2h:Matcher ;
+      r2h:triplePattern [
+        r2h:subject r2h:this;
+        r2h:predicate rdf:type;
         r2h:object void:Dataset;
       ];
       r2h:template [
@@ -88,7 +102,7 @@
                 <li>Publisher: <span class="fetch" resource="{{.}}">publisher</span></li>
             {{/dcterms:publisher}}
             {{#dcterms:creator}}
-                <li>Creator <span class="fetch" resource="{{.}}">creator</span></li>
+                <li>Creator: <span class="fetch" resource="{{.}}">creator</span></li>
             {{/dcterms:creator}}
             {{#dcterms:contributor}}
                 <li>Contributor: <span class="fetch" resource="{{.}}">contributor</span></li>
