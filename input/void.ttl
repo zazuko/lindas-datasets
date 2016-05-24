@@ -94,7 +94,7 @@
     dcterms:title "Metadaten zu LINDAS & data.admin.ch"@de;
     dcterms:title "LINDAS & data.admin.ch meta data"@en;
     dcterms:description "This graph contains all meta data about datasets provided by LINDAS and related projects like data.admin.ch."@en;
-    dcterms:creator <org/Zazuko>;
+    dcterms:publisher <org/Zazuko>;
     dcterms:issued "2016-05-23"^^xsd:date; # date of publication of the source
     dcterms:created "2016-05-23"^^xsd:date;
     dcterms:modified "2016-05-23"^^xsd:date;
@@ -111,8 +111,8 @@
     dcterms:title "Elenco storicizzato dei Comuni"@it;
     dcterms:title "Historicized Municipality Register"@en;
     dcterms:description "RDF transformation of the Historicized Municipality Register"@en;
-    dcterms:contributor <org/Zazuko>;
-    dcterms:creator <org/FSO>;
+    dcterms:creator <org/Zazuko>;
+    dcterms:publisher  <org/FSO>;
     dcterms:source <eCH0071-Dist>;
     dcterms:issued "2016-04-10"^^xsd:date; # date of publication of the source
     dcterms:created "2016-04-10"^^xsd:date;
@@ -140,8 +140,8 @@
     foaf:page <https://github.com/csarven/bfs-linked-data> ;
     dcterms:title "FSO STATPOP-2011 Example Datasets"@en;
     dcterms:description "Example Data Cube of some FSO STATPOP-2011 Datasets. These datasets were created within the Linked Data pilot between FSO and Berner Fachochschule (BFH) in a prototype in 2013. We make them available as is and provide several example queries. Currently the dataset is not maintained and there are no more recent STATPOP datasets available as RDF."@en;
-    dcterms:contributor <http://csarven.ca/#i>;
-    dcterms:creator <org/FSO>;
+    dcterms:creator <http://csarven.ca/#i>;
+    dcterms:publisher <org/FSO>;
     dcterms:source <dataset/eCH0071-Dist>;
     dcterms:issued "2011-12-31"^^xsd:date; # date of publication of the source
     dcterms:created "2013-02-27"^^xsd:date;
@@ -163,8 +163,8 @@
     dcterms:title "Arrêts des transports publics (ID 98.2)"@fr;
     dcterms:title "Stazioni per i trasporti pubblici (ID 98.2)"@it;
     dcterms:description "DIDOK is a list from the Swiss Federal Office of Transport (FOT) with all official bus, tram and railway stations in Switzerland."@en;
-    dcterms:creator <org/FOT>;
-    dcterms:contributor <org/Zazuko>;
+    dcterms:publisher <org/FOT>;
+    dcterms:creator <org/Zazuko>;
     dcterms:issued "2016-04-20"^^xsd:date; # date of publication of the source
     dcterms:created "2016-04-20"^^xsd:date;
     dcterms:modified "2016-04-20"^^xsd:date;
@@ -197,8 +197,7 @@
         ]
       ]; 
     dcterms:accrualPerdiodicty "jährlich"@de ;
-    dcterms:creator <org/FOEN> ;
-    dcterms:contributor <org/Zazuko> ;
+    dcterms:creator <org/Zazuko> ;
     void:sparqlEndpoint <http://lindas-data.ch/sparql> .
 
 <dataset/UBD28-Dist> a dcat:Dataset ;
@@ -231,8 +230,7 @@
         ]
       ]; 
     dcterms:accrualPerdiodicty "5 years"@de ; # TODO that's not how it should be done, needs to be fixed
-    dcterms:creator <org/FOEN> ;
-    dcterms:contributor <org/Zazuko> ;
+    dcterms:creator <org/Zazuko> ;
     void:sparqlEndpoint <http://lindas-data.ch/sparql> .
 
 <dataset/UBD66-Dist> a dcat:Dataset ;
@@ -246,8 +244,8 @@
     foaf:page <https://github.com/lindas-uc/OutbreakTools>;
     dcterms:title "Animal transports data"@en;
     dcterms:description "Animal transports data"@en;
-    dcterms:creator <org/FSVO>;
-    dcterms:contributor <org/Zazuko>;
+    dcterms:publisher <org/FSVO>;
+    dcterms:creator <org/Zazuko>;
     dcterms:issued "2016-04-04"^^xsd:date; # date of publication of the source
     dcterms:created "2016-04-04"^^xsd:date;
     dcterms:modified "2016-04-04"^^xsd:date;
@@ -260,9 +258,9 @@
     dcterms:title "Stapfer-Enquête survey of 1799 as Linked Data"@en;
     dcterms:title "Stapfer-Enquête Schulumfrage von 1799 als Linked Data"@de;
     dcterms:description "Die Stapfer-Enquête. Edition der helvetischen Schulumfrage von 1799 als Linked Data."@de;
-    dcterms:creator <org/SFA>;
-    dcterms:contributor <org/Zazuko>;
-    dcterms:contributor <org/UniBE>;
+    dcterms:publisher <org/SFA>;
+    dcterms:creator <org/Zazuko>;
+    dcterms:creator <org/UniBE>;
     dcterms:issued "2016-03-30"^^xsd:date; # date of publication of the source
     dcterms:created "2016-03-30"^^xsd:date;
     dcterms:modified "2016-03-30"^^xsd:date;
@@ -273,7 +271,7 @@
     dcterms:title "e-relocation"@en;
     dcterms:title "eUmzugCH"@de;
     dcterms:description ""@en;
-    dcterms:creator <org/SECO>;
+    dcterms:publisher <org/SECO>;
     dcterms:issued "2016-05-23"^^xsd:date; # date of publication of the source
     dcterms:created "2016-05-23"^^xsd:date;
     dcterms:modified "2016-05-23"^^xsd:date;
@@ -284,9 +282,9 @@
     foaf:homepage <https://www.kmu.admin.ch/kmu/de/home/kmu-politik/ausbau-des-e-governments/initiativen-des-seco.html>;
     dcterms:title "Governmental agency directory"@de;
     dcterms:title "Behördenverzeichnis"@de;
-    dcterms:creator <org/SECO>;
-    dcterms:contributor <org/Zazuko>;
-    dcterms:contributor <org/Inversum> ;
+    dcterms:publisher <org/SECO>;
+    dcterms:creator <org/Zazuko>;
+    dcterms:creator <org/Inversum> ;
     dcterms:issued "2016-05-23"^^xsd:date; # date of publication of the source
     dcterms:created "2016-05-23"^^xsd:date;
     dcterms:modified "2016-05-23"^^xsd:date;
