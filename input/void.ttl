@@ -15,7 +15,7 @@
 <> a void:DatasetDescription;
     dcterms:title "VoID Description of data.admin.ch Datasets"@en;
     dcterms:creator <org/Zazuko>;
-    foaf:primaryTopic <dataset/meta>, <dataset/eCH0071>, <dataset/STATPOP-2011>, <dataset/ld-didok>, <dataset/UBD28>, <dataset/UBD66>, <dataset/outbreak>, <dataset/stapfer-enquete>, <dataset/e-relocation>, <dataset/govagencies> .
+    foaf:topic <dataset/meta>, <dataset/eCH0071>, <dataset/STATPOP-2011>, <dataset/ld-didok>, <dataset/UBD28>, <dataset/UBD66>, <dataset/outbreak>, <dataset/stapfer-enquete>, <dataset/e-relocation>, <dataset/govagencies> .
 
 ##
 ## Organizations
