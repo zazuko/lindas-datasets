@@ -258,6 +258,7 @@
     foaf:homepage <http://stapferenquete.ch/>;
     foaf:page <https://github.com/zazuko/stapfer-enquete> ;
     dcterms:title "Stapfer-Enquête survey of 1799 as Linked Data"@en;
+    dcterms:title "Stapfer-Enquête Schulumfrage von 1799 als Linked Data"@de;
     dcterms:description "Die Stapfer-Enquête. Edition der helvetischen Schulumfrage von 1799 als Linked Data."@de;
     dcterms:creator <org/SFA>;
     dcterms:contributor <org/Zazuko>;
