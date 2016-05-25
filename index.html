@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
     <script src="//cdn.rawgit.com/rdf2h/rdf2h/v0.3.0/dist/rdf-ext.js"></script>
     <script src="//cdn.rawgit.com/rdf2h/rdf2h/v0.3.0/dist/rdf2h.js"></script>
     <script src="//cdn.rawgit.com/retog/rdf-parser-n3-browser/v0.3.0b/dist/n3-parser.js"></script>
     <script src="//cdn.rawgit.com/retog/rdf-store-ldp-browser/v0.3.0-rc2f/dist/rdf-store-ldp.js"></script>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="//cdn.rawgit.com/rdf2h/ld2h/v0.4.0/dist/ld2h.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <link rel="import" href="bower_components/moment-js/moment-js.html">
     <script id="matchers" type="text/turtle">
     @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
     @prefix r2h: <http://rdf2h.github.io/2015/rdf2h#> .
@@ -41,6 +42,7 @@
             {{#foaf:topic}}
                 <span class="fetch" resource="{{.}}">topic</span>
             {{/foaf:topic}}
+            Date: <moment-js date="" format="DD.MM.YYYY"></moment-js>
         """
       ]
     ] r2h:before 
@@ -108,7 +110,7 @@
                 <li>Contributor: <span class="fetch" resource="{{.}}">contributor</span></li>
             {{/dcterms:contributor}}
             {{#dcterms:issued}}
-                <li>Issued: {{.}}</li>
+                <li>Issued: <moment-js date="{{.}}" format="DD.MM.YYYY"></moment-js></li>
             {{/dcterms:issued}}
             <li>SPARQL Endpoint: <a href="void:sparqlEndpoint">{{void:sparqlEndpoint}}</a></li>
             {{#+void:exampleResource}}

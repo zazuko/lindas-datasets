@@ -1,0 +1,21 @@
+{
+  "name": "lindas-datasets",
+  "homepage": "https://github.com/zazuko/lindas-datasets",
+  "authors": [
+    "Adrian Gschwend <ktk@netlabs.org>"
+  ],
+  "description": "LINDAS dataset page",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment-js": "^0.3.0"
+  }
+}
