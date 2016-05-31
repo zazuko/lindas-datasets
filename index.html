@@ -86,8 +86,10 @@
       r2h:template [
         r2h:context r2h:Default;
         r2h:mustache """
-        <div>Github site: <a href="{{doap:browse}}">{{doap:browse}}</a><br/>
-        Git repository URI: {{doap:location}}</div>
+        <ul>
+            <li>Github site: <a href="{{doap:browse}}">{{doap:browse}}</a></li>
+            <li>Git repository URI: {{doap:location}}</li>
+        </ul>
         """
       ]
     ].
@@ -127,6 +129,9 @@
             {{#dcterms:issued}}
                 <li>Issued: <moment-js date="{{.}}" format="DD.MM.YYYY"></moment-js></li>
             {{/dcterms:issued}}
+            {{#doap:repository}}
+                <li>Repository: <span class="fetch" resource="{{.}}">repository</span></li>
+            {{/doap:repository}}
             <li>SPARQL Endpoint: <a href="{{void:sparqlEndpoint}}">{{void:sparqlEndpoint}}</a></li>
             {{#+void:exampleResource}}
                 <li><b>Example resources</b>
