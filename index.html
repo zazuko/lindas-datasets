@@ -130,7 +130,7 @@
                 <li>Issued: <moment-js date="{{.}}" format="DD.MM.YYYY"></moment-js></li>
             {{/dcterms:issued}}
             {{#doap:repository}}
-                <li>Repository: <span class="fetch" resource="{{.}}">repository</span></li>
+                <li>Repository: {{{:render .}}} </li>
             {{/doap:repository}}
             <li>SPARQL Endpoint: <a href="{{void:sparqlEndpoint}}">{{void:sparqlEndpoint}}</a></li>
             {{#+void:exampleResource}}
