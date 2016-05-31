@@ -111,7 +111,7 @@
             {{#dcterms:issued}}
                 <li>Issued: <moment-js date="{{.}}" format="DD.MM.YYYY"></moment-js></li>
             {{/dcterms:issued}}
-            <li>SPARQL Endpoint: <a href="void:sparqlEndpoint">{{void:sparqlEndpoint}}</a></li>
+            <li>SPARQL Endpoint: <a href="{{void:sparqlEndpoint}}">{{void:sparqlEndpoint}}</a></li>
             {{#+void:exampleResource}}
                 <li><b>Example resources</b>
                 <ul>
