@@ -222,7 +222,10 @@
         doap:location <https://github.com/lindas-uc/bafu_ubd.git> 
     ] ;
     void:sparqlEndpoint <http://lindas-data.ch/sparql> ;
-    void:rootResource <http://environment.data.admin.ch/ubd/28/qb/ubd28> .
+    void:rootResource <http://environment.data.admin.ch/ubd/28/qb/ubd28> ;
+    void:exampleResource <http://environment.data.admin.ch/ubd/28/measurement/neLCF/O3/nodaysmaxhourlymeanabove120/2002> ;
+    void:exampleResource <http://environment.data.admin.ch/ubd/28/measurement/tiLUG/pb_dustfall/annualmean/1992> ;
+    void:exampleResource <http://environment.data.admin.ch/ubd/28/pollutant/partno> .
 
 <dataset/UBD28-Dist> a dcat:Dataset ;
     dcterms:issued "2015-08-06"^^xsd:date; # date of publication of the source
@@ -261,7 +264,9 @@
         doap:location <https://github.com/lindas-uc/bafu_ubd.git> 
     ] ;
     void:sparqlEndpoint <http://lindas-data.ch/sparql> ;
-    void:rootResource <http://environment.data.admin.ch/ubd/66/qb/ubd66> .
+    void:rootResource <http://environment.data.admin.ch/ubd/66/qb/ubd66> ;
+    void:exampleResource <http://environment.data.admin.ch/ubd/66/measurement/88_1/Ni/2003-08-05T00%3A00%3A00> ;
+    void:exampleResource <http://environment.data.admin.ch/ubd/66/parameter/Ni> .
 
 <dataset/UBD66-Dist> a dcat:Dataset ;
     dcterms:issued "2015-11-30"^^xsd:date; # date of publication of the source
