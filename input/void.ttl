@@ -11,6 +11,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix schema: <http://schema.org/>.
 @prefix time: <http://www.w3.org/2006/time#>.
+@prefix doap: <http://usefulinc.com/ns/doap#> .
 
 <> a void:DatasetDescription;
     dcterms:title "VoID Description of data.admin.ch Datasets"@en;
@@ -90,7 +91,6 @@
 
 <dataset/meta> a void:Dataset, dcat:Dataset ;
     foaf:homepage <http://data.admin.ch/>;
-    foaf:page <https://github.com/zazuko/lindas-datasets>;
     dcterms:title "Metadaten zu LINDAS & data.admin.ch"@de;
     dcterms:title "LINDAS & data.admin.ch meta data"@en;
     dcterms:description "This graph contains all meta data about datasets provided by LINDAS and related projects like data.admin.ch."@en;
@@ -98,6 +98,11 @@
     dcterms:issued "2016-05-23"^^xsd:date; # date of publication of the source
     dcterms:created "2016-05-23"^^xsd:date;
     dcterms:modified "2016-05-23"^^xsd:date;
+    doap:repository [
+        a doap:GitRepository ;
+        doap:browse <https://github.com/zazuko/lindas-datasets> ;
+        doap:location <https://github.com/zazuko/lindas-datasets.git> 
+    ] ;
     void:sparqlEndpoint <http://data.admin.ch/sparql>;
 .
 
@@ -117,6 +122,11 @@
     dcterms:issued "2016-04-10"^^xsd:date; # date of publication of the source
     dcterms:created "2016-04-10"^^xsd:date;
     dcterms:modified "2016-04-10"^^xsd:date;
+    doap:repository [
+        a doap:GitRepository ;
+        doap:browse <https://github.com/zazuko/fso-lod> ;
+        doap:location <https://github.com/zazuko/fso-lod.git> 
+    ] ;
     void:sparqlEndpoint <http://data.admin.ch/sparql>;
     void:dataDump <https://github.com/zazuko/fso-lod/releases/download/0.0.7/eCH0071-final.nt>;
     void:exampleResource <http://classifications.data.admin.ch/municipality/371> ;
@@ -137,7 +147,6 @@
 <dataset/STATPOP-2011> a void:Dataset, dcat:Dataset;
     foaf:homepage <http://data.admin.ch/>;
     foaf:page <http://www.bfs.admin.ch/bfs/portal/en/index/infothek/erhebungen__quellen/blank/blank/statpop/01.html>;
-    foaf:page <https://github.com/csarven/bfs-linked-data> ;
     dcterms:title "FSO STATPOP-2011 Example Datasets"@en;
     dcterms:description "Example Data Cube of some FSO STATPOP-2011 Datasets. These datasets were created within the Linked Data pilot between FSO and Berner Fachochschule (BFH) in a prototype in 2013. We make them available as is and provide several example queries. Currently the dataset is not maintained and there are no more recent STATPOP datasets available as RDF."@en;
     dcterms:creator <http://csarven.ca/#i>;
@@ -146,6 +155,11 @@
     dcterms:issued "2011-12-31"^^xsd:date; # date of publication of the source
     dcterms:created "2013-02-27"^^xsd:date;
     dcterms:modified "2013-02-27"^^xsd:date;
+    doap:repository [
+        a doap:GitRepository ;
+        doap:browse <https://github.com/csarven/bfs-linked-data> ;
+        doap:location <https://github.com/csarven/bfs-linked-data.git> 
+    ] ;
     void:sparqlEndpoint <http://data.admin.ch/sparql>;
     void:dataDump <https://github.com/zazuko/fso-lod/tree/master/input/STATPOP>;
     void:exampleResource <http://data.admin.ch/bfs/dataset/DSD_T_PERSON_STATTAB-01-2A01> ;
@@ -155,7 +169,6 @@
 
 <dataset/ld-didok> a void:Dataset, dcat:Dataset;
     foaf:homepage <https://www.bav.admin.ch>;
-    foaf:page <https://github.com/lindas-uc/ld-didok>;
     foaf:page <https://www.bav.admin.ch/bav/de/home/themen/alphabetische-themenliste/geoinformation/geobasisdaten/haltestellen-des-oeffentlichen-verkehrs.html> ;
     foaf:page <https://opendata.swiss/dataset/haltestellen-des-offentlichen-verkehrs>;
     dcterms:title "Public transport stops (ID 98.2)"@en;
@@ -168,6 +181,11 @@
     dcterms:issued "2016-04-20"^^xsd:date; # date of publication of the source
     dcterms:created "2016-04-20"^^xsd:date;
     dcterms:modified "2016-04-20"^^xsd:date;
+    doap:repository [
+        a doap:GitRepository ;
+        doap:browse <https://github.com/lindas-uc/ld-didok> ;
+        doap:location <https://github.com/lindas-uc/ld-didok.git> 
+    ] ;
     void:sparqlEndpoint <http://lindas-data.ch/sparql>;
 .
 
@@ -198,6 +216,11 @@
       ]; 
     dcterms:accrualPerdiodicty "jährlich"@de ;
     dcterms:creator <org/Zazuko> ;
+    doap:repository [
+        a doap:GitRepository ;
+        doap:browse <https://github.com/lindas-uc/bafu_ubd> ;
+        doap:location <https://github.com/lindas-uc/bafu_ubd.git> 
+    ] ;
     void:sparqlEndpoint <http://lindas-data.ch/sparql> ;
     void:rootResource <http://environment.data.admin.ch/ubd/28/qb/ubd28> .
 
@@ -232,6 +255,11 @@
       ]; 
     dcterms:accrualPerdiodicty "5 years"@de ; # TODO that's not how it should be done, needs to be fixed
     dcterms:creator <org/Zazuko> ;
+    doap:repository [
+        a doap:GitRepository ;
+        doap:browse <https://github.com/lindas-uc/bafu_ubd> ;
+        doap:location <https://github.com/lindas-uc/bafu_ubd.git> 
+    ] ;
     void:sparqlEndpoint <http://lindas-data.ch/sparql> ;
     void:rootResource <http://environment.data.admin.ch/ubd/66/qb/ubd66> .
 
@@ -243,7 +271,6 @@
 
 <dataset/outbreak> a void:Dataset, dcat:Dataset;
     foaf:homepage <http://www.blv.admin.ch/>;
-    foaf:page <https://github.com/lindas-uc/OutbreakTools>;
     dcterms:title "Animal transports data"@en;
     dcterms:description "Animal transports data"@en;
     dcterms:publisher <org/FSVO>;
@@ -251,12 +278,16 @@
     dcterms:issued "2016-04-04"^^xsd:date; # date of publication of the source
     dcterms:created "2016-04-04"^^xsd:date;
     dcterms:modified "2016-04-04"^^xsd:date;
+    doap:repository [
+        a doap:GitRepository ;
+        doap:browse <https://github.com/lindas-uc/OutbreakTools> ;
+        doap:location <https://github.com/lindas-uc/OutbreakTools.git> 
+    ] ;
     void:sparqlEndpoint <http://lindas-data.ch/sparql>;
 .
 
 <dataset/stapfer-enquete> a void:Dataset, dcat:Dataset;
     foaf:homepage <http://stapferenquete.ch/>;
-    foaf:page <https://github.com/zazuko/stapfer-enquete> ;
     dcterms:title "Stapfer-Enquête survey of 1799 as Linked Data"@en;
     dcterms:title "Stapfer-Enquête Schulumfrage von 1799 als Linked Data"@de;
     dcterms:description "Die Stapfer-Enquête. Edition der helvetischen Schulumfrage von 1799 als Linked Data."@de;
@@ -266,6 +297,11 @@
     dcterms:issued "2016-03-30"^^xsd:date; # date of publication of the source
     dcterms:created "2016-03-30"^^xsd:date;
     dcterms:modified "2016-03-30"^^xsd:date;
+    doap:repository [
+        a doap:GitRepository ;
+        doap:browse <https://github.com/zazuko/stapfer-enquete> ;
+        doap:location <https://github.com/zazuko/stapfer-enquete.git> 
+    ] ;
     void:sparqlEndpoint <http://lindas-data.ch/sparql>;
 .
 
