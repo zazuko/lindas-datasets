@@ -198,7 +198,8 @@
       ]; 
     dcterms:accrualPerdiodicty "jährlich"@de ;
     dcterms:creator <org/Zazuko> ;
-    void:sparqlEndpoint <http://lindas-data.ch/sparql> .
+    void:sparqlEndpoint <http://lindas-data.ch/sparql> ;
+    void:rootResource <http://environment.data.admin.ch/ubd/28/qb/ubd28> .
 
 <dataset/UBD28-Dist> a dcat:Dataset ;
     dcterms:issued "2015-08-06"^^xsd:date; # date of publication of the source
@@ -231,7 +232,8 @@
       ]; 
     dcterms:accrualPerdiodicty "5 years"@de ; # TODO that's not how it should be done, needs to be fixed
     dcterms:creator <org/Zazuko> ;
-    void:sparqlEndpoint <http://lindas-data.ch/sparql> .
+    void:sparqlEndpoint <http://lindas-data.ch/sparql> ;
+    void:rootResource <http://environment.data.admin.ch/ubd/66/qb/ubd66> .
 
 <dataset/UBD66-Dist> a dcat:Dataset ;
     dcterms:issued "2015-11-30"^^xsd:date; # date of publication of the source
