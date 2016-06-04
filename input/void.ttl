@@ -80,6 +80,14 @@
     rdfs:label "Université de Berne"@fr;
     foaf:homepage <http://www.unibe.ch/> .
 
+<org/SBB> a foaf:Organization, schema:Corporation;
+    rdfs:label "Swiss Federal Railways (SBB)"@en;
+    rdfs:label "Schweizerische Bundesbahnen (SBB)"@de ;
+    rdfs:label "Chemins de fer fédéraux suisses (CFF)"@fr;
+    rdfs:label "Ferrovie federali svizzere (FFS)"@it;
+    rdfs:label "Viafiers federalas svizras (VFF)"@rm;
+    foaf:homepage <https://www.sbb.ch/> .
+
 <org/INVERSUM> a foaf:Organization, schema:Corporation;
     rdfs:label "INVERSUM GmbH";
     foaf:homepage <http://inversum.ch/>
@@ -178,6 +186,7 @@
     dcterms:description "DIDOK is a list from the Swiss Federal Office of Transport (FOT) with all official bus, tram and railway stations in Switzerland."@en;
     dcterms:publisher <org/FOT>;
     dcterms:creator <org/Zazuko>;
+    dcterms:creator <org/SBB>;
     dcterms:issued "2016-04-20"^^xsd:date; # date of publication of the source
     dcterms:created "2016-04-20"^^xsd:date;
     dcterms:modified "2016-04-20"^^xsd:date;
