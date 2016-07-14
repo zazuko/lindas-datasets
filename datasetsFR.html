@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/build/css/admin.css">
+    <link rel="stylesheet" href="/build/css/print.css">
+    <link rel="stylesheet" href="/build/css/vendors.css">
+    <link rel="stylesheet" href="/build/css/lindasPage.css">
+    <script src="/build/js/main.js"></script>
+    <script src="/build/js/polyfills.min.js"></script>
+    <script src="/build/js/vendors.min.js"></script>
+
+    <title>Title</title>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <script src="//cdn.rawgit.com/rdf2h/rdf2h/v0.3.0/dist/rdf-ext.js"></script>
+    <script src="//cdn.rawgit.com/rdf2h/rdf2h/v0.3.0/dist/rdf2h.js"></script>
+    <script src="//cdn.rawgit.com/retog/rdf-parser-n3-browser/v0.3.0b/dist/n3-parser.js"></script>
+    <script src="//cdn.rawgit.com/retog/rdf-store-ldp-browser/v0.3.0-rc2f/dist/rdf-store-ldp.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdn.rawgit.com/rdf2h/ld2h/v0.4.1/dist/ld2h.js"></script>
+    <link rel="import" href="bower_components/moment-js/moment-js.html">
+    <script id="matchers" type="text/turtle">
+        @prefix rdf:
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . @prefix r2h:
+            <http://rdf2h.github.io/2015/rdf2h#> . @base
+                <http://data.admin.ch/> . @prefix void:
+                <http://rdfs.org/ns/void#> . @prefix rdfs:
+                    <http://www.w3.org/2000/01/rdf-schema#> . @prefix owl:
+                        <http://www.w3.org/2002/07/owl#> . @prefix xsd:
+                            <http://www.w3.org/2001/XMLSchema#> . @prefix dcterms:
+                                <http://purl.org/dc/terms/> . @prefix foaf:
+                                <http://xmlns.com/foaf/0.1/> . @prefix wv:
+                                <http://vocab.org/waiver/terms/norms> . @prefix sd:
+                                    <http://www.w3.org/ns/sparql-service-description#> . @prefix dcat:
+                                        <http://www.w3.org/ns/dcat#> . @prefix schema:
+                                            <http://schema.org/>. @prefix time:
+                                            <http://www.w3.org/2006/time#>. @prefix doap:
+                                                <http://usefulinc.com/ns/doap#> . [ a r2h:Matcher ; r2h:triplePattern [ r2h:subject r2h:this; r2h:predicate rdf:type; r2h:object void:DatasetDescription; ]; r2h:template [ r2h:context r2h:Default; r2h:mustache """
+                                                    <h1>{{dcterms:title}}</h1>
+                                                    <p>Created by: <span class="fetch" resource="{{dcterms:creator}}">creator</span></p>
+                                                    <h2>Datasets</h2> {{#foaf:topic}}
+                                                    <span class="fetch" resource="{{.}}">topic</span> {{/foaf:topic}} """ ] ] r2h:before [ a r2h:Matcher ; r2h:triplePattern [ r2h:subject r2h:this; r2h:predicate rdf:type; r2h:object foaf:Organization; ]; r2h:template [ r2h:context r2h:Default; r2h:mustache """
+                                                    <a href="{{foaf:homepage}}"><span class="languageAlternatives">
+            {{#rdfs:label}}
+            <span lang="{{./dcterms:language}}">{{.}}</span>
+            {{/rdfs:label}}
+        </span></a> """ ] ]. [ a r2h:Matcher ; r2h:triplePattern [ r2h:subject r2h:this; r2h:predicate rdf:type; r2h:object foaf:Person; ]; r2h:template [ r2h:context r2h:Default; r2h:mustache """
+                                                    <a href="{{{.}}}">{{foaf:givenName}} {{foaf:familyName}}</a> """ ] ]. [ a r2h:Matcher ; r2h:triplePattern [ r2h:subject r2h:this; r2h:predicate rdf:type; r2h:object doap:GitRepository; ]; r2h:template [ r2h:context r2h:Default; r2h:mustache """
+                                                    <ul>
+                                                        <li>Github site: <a href="{{doap:browse}}">{{doap:browse}}</a></li>
+                                                        <li>Git repository URI: {{doap:location}}</li>
+                                                    </ul>
+                                                    """ ] ]. [ a r2h:Matcher ; r2h:triplePattern [ r2h:subject r2h:this; r2h:predicate rdf:type; r2h:object void:Dataset; ]; r2h:template [ r2h:context r2h:Default; r2h:mustache """
+                                                    <h3>
+        <a href="{{foaf:homepage}}">
+        <span class="languageAlternatives">
+            {{#dcterms:title}}
+            <span lang="{{./dcterms:language}}">{{.}}</span>
+            {{/dcterms:title}}
+        </span>
+        </a>
+        </h3>
+                                                    <div class="languageAlternatives">
+                                                        {{#dcterms:description}}
+                                                        <span lang="{{./dcterms:language}}">{{.}}</span> {{/dcterms:description}}
+                                                    </div>
+                                                    <ul>
+                                                        {{#dcterms:publisher}}
+                                                        <li>Publisher: <span class="fetch" resource="{{.}}">publisher</span></li>
+                                                        {{/dcterms:publisher}} {{#dcterms:creator}}
+                                                        <li>Creator: <span class="fetch" resource="{{.}}">creator</span></li>
+                                                        {{/dcterms:creator}} {{#dcterms:contributor}}
+                                                        <li>Contributor: <span class="fetch" resource="{{.}}">contributor</span></li>
+                                                        {{/dcterms:contributor}} {{#dcterms:issued}}
+                                                        <li>Issued:
+                                                            <moment-js date="{{.}}" format="DD.MM.YYYY"></moment-js>
+                                                        </li>
+                                                        {{/dcterms:issued}} {{#doap:repository}}
+                                                        <li>Repository: {{{:render .}}} </li>
+                                                        {{/doap:repository}}
+                                                        <li>SPARQL Endpoint: <a href="{{void:sparqlEndpoint}}">{{void:sparqlEndpoint}}</a></li>
+                                                        {{#+void:exampleResource}}
+                                                        <li><b>Example resources</b>
+                                                            <ul>
+                                                                {{#void:exampleResource}}
+                                                                <li><a href="{{{.}}}">{{{.}}}</a></li>
+                                                                {{/void:exampleResource}}
+                                                            </ul>
+                                                        </li>
+                                                        {{/+void:exampleResource}}
+                                                    </ul>
+                                                    """ ] ].
+
+
+    </script>
+    <script type="text/javascript">
+        function chooseBestLanguageAlternative(langPreferences) {
+            $(".languageAlternatives").each(function (index, element) {
+                $(element).children().hide();
+                for (var i = 0; i <= langPreferences.length; i++) {
+                    console.log("looking for variant in: " + langPreferences[i]);
+                    var languageShown = false;
+                    $(element).children().each(function (index2, element2) {
+                        var e = $(element2);
+                        console.log("in child with lang " + e.attr("lang") + " looking for " + langPreferences[i]);
+                        if ((i === langPreferences.length) || (langPreferences[i] === e.attr("lang").toLocaleLowerCase())) {
+                            e.show();
+                            languageShown = true;
+                        }
+                    });
+                    if (languageShown) {
+                        break;
+                    }
+                }
+            })
+        }
+        $(function () {
+            LD2h.expand().then(function () {
+                var browserLanguage = window.navigator.userLanguage || window.navigator.language;
+                chooseBestLanguageAlternative([browserLanguage, browserLanguage.split("-")[0], "en", "de", "fr", "it", "rm"]);
+            });
+        });
+    </script>
+</head>
+
+<body class="mod mod-layout skin-layout-template-homepage" data-glossary="/gov/de/start.glossaryjs.json" style="">
+
+<div class="container container-main">
+    <!--header-->
+    <header ng-style="testServerStyle">
+        <div flash-alert="" active-class="in alert" class="fade ng-scope" duration="10000">
+            <button type="button" class="close" ng-click="hide()">×</button>
+            <span class="alert-message ng-binding"></span>
+        </div>
+        <div class="clearfix ng-scope" ng-controller="NavbarCtrl">
+            <section class="nav-services clearfix">
+                <h2 data-i18n="_home-title_">Linked Data Suite</h2>
+                <nav class="nav-lang">
+                    <ul>
+                        <!-- ngRepeat: lang in languages -->
+                        <li ng-repeat="lang in languages" class="ng-scope">
+                            <a href="index.html" class="" ng-click="setLanguage(lang);" class="ng-binding active">DE</a>
+                        </li>
+                        <!-- end ngRepeat: lang in languages -->
+                        <li ng-repeat="lang in languages" class="ng-scope">
+                            <a href="indexEN.html" class="" ng-click="setLanguage(lang);" class="ng-binding">EN</a>
+                        </li>
+                        <!-- end ngRepeat: lang in languages -->
+                        <li ng-repeat="lang in languages" class="ng-scope">
+                            <a href="indexFR.html" class="active" ng-click="setLanguage(lang);" class="ng-binding">FR</a>
+                        </li>
+                        <!-- end ngRepeat: lang in languages -->
+                    </ul>
+                </nav>
+                <nav class="pull-right">
+                    <!-- ngIf: isUserAuthenticated() && $root.isSystemSetUp -->
+                    <!-- ngIf: !isUserAuthenticated() && $root.isSystemSetUp -->
+                    <ul class="download-link ng-scope" ng-if="!isUserAuthenticated() &amp;&amp; $root.isSystemSetUp">
+                        <li><a href="http://lindas-data.ch" class="ng-binding">Se connecter</a></li>
+                    </ul>
+                    <!-- end ngIf: !isUserAuthenticated() && $root.isSystemSetUp -->
+                </nav>
+            </section>
+        </div>
+
+        <a href="#/" class="brand hidden-xs">
+            <img src="/build/img/logo-CH.png">
+            <h1 data-i18n="_home-title_">Linked Data Suite</h1>
+        </a>
+
+
+    </header>
+    <!--navigation-->
+    <nav class="nav-main yamm navbar ng-scope" role="navigation" ng-controller="NavbarCtrl">
+        <ul class="nav navbar-nav">
+            <li class="dropdown yamm-fw " ng-class="getClass('/start')"><a href="/indexFR.html" class="ng-binding">Bienvenue chez LINDAS</a></li>
+            <li class="dropdown yamm-fw active" ng-class="getClass('/browse')"><a href="/datasetsFR.html" class="ng-binding">Contenu</a></li>
+    </ul>
+</nav>
+<div class="col-md-12" style="margin:13px">
+    <div class="col-md-9 main-content container-fluid">
+        <!-- appViewSegment: 0 -->
+        <div id="contents" app-view-segment="0" class="ng-scope">
+            <div class="contents row ng-scope">
+                <div id="generatedContent">
+                    <div class="contentmenu">
+                <h1>Contenu</h1>
+                <ul>Inhaltsverzeichnis_Titel
+                    <li>Inhaltsverzeichnis_Beispiel: <span class="" resource="http://data.admin.ch/org/FSO">
+                                                    <a href="http://www.bfs.admin.ch/"><span class="languageAlternatives">
+            <span lang="fr" style="display: none;">Office fédéral de la statistique (OFS)</span>
+                        <span lang="en" style="display: none;">Swiss Federal Statistical Office (FSO)</span>
+                        <span lang="it" style="display: none;">Ufficio federale di statistica (UST)</span>
+                        <span lang="de" style="display: inline;">Bundesamt für Statistik (BFS)</span>
+                        </span>
+                        </a>
+                        </span>
+                    </li>
+                    <li>Inhaltsverzeichnis_Beispiel: <span class="" resource="http://data.admin.ch/org/FSO">
+                                                    <a href="http://www.bfs.admin.ch/"><span class="languageAlternatives">
+            <span lang="fr" style="display: none;">Office fédéral de la statistique (OFS)</span>
+                        <span lang="en" style="display: none;">Swiss Federal Statistical Office (FSO)</span>
+                        <span lang="it" style="display: none;">Ufficio federale di statistica (UST)</span>
+                        <span lang="de" style="display: inline;">Bundesamt für Statistik (BFS)</span>
+                        </span>
+                        </a>
+                        </span>
+                    </li>
+                    <li>Inhaltsverzeichnis_Beispiel: <span class="" resource="http://data.admin.ch/org/FSO">
+                                                    <a href="http://www.bfs.admin.ch/"><span class="languageAlternatives">
+            <span lang="fr" style="display: none;">Office fédéral de la statistique (OFS)</span>
+                        <span lang="en" style="display: none;">Swiss Federal Statistical Office (FSO)</span>
+                        <span lang="it" style="display: none;">Ufficio federale di statistica (UST)</span>
+                        <span lang="de" style="display: inline;">Bundesamt für Statistik (BFS)</span>
+                        </span>
+                        </a>
+                        </span>
+                    </li>
+                </ul>
+                        </div>
+                <div class="fetch" resource="http://data.admin.ch/">
+                    results goes here
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="context-column">
+
+            <a name="context-sidebar"></a>
+            <div class="mod mod-contactbox"></div>
+            <div class="mod mod-teaser">
+                <div class="clearfix well ">
+                    <img src="build/img/lindas/logo-Lindas.png" style="margin: 0 auto; display: block; margin-top: 20px;">
+
+                    <h3 class="link_title">liens hypertextes</h3>
+                    <ul>
+                        <li><a href="https://www.egovernment.ch/" target="_blank" class="icon icon--after icon--external">egovernment schweiz</a></li>
+                        <li><a href="http://data.admin.ch" target="_blank" class="icon icon--after icon--external">data.admin.ch</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div style="clear:both"></div>
+        <footer>
+            <address>
+			<div class="container-fluid ng-binding">
+			©2014-2016 Secrétariat d'Etat à l'économie SECO
+			<nav class="pull-right">
+                <ul ng-controller="NavbarCtrl" class="ng-scope">
+                    <li>
+	          <!-- ngIf: getSystemLanguage()=='de' --><a ng-if="getSystemLanguage()=='de'" href="http://www.disclaimer.admin.ch/index.html" target="_blank" data-i18n="_legal-information_" class="ng-scope">
+Information juridique </a><!-- end ngIf: getSystemLanguage()=='de' -->
+	          <!-- ngIf: getSystemLanguage()=='fr' -->
+	          <!-- ngIf: getSystemLanguage()=='it' -->
+	          <!-- ngIf: getSystemLanguage()=='en' -->	          
+                    </li>
+                    <li ng-class="getClass('/legal-information')"></li>
+          <li ng-class="getClass('/legal-information')"></li>
+          <li ng-class="getClass('/legal-information')"></li>
+          <li ng-class="getClass('/contact')"><a href="/contactFR.html" data-i18n="_contact_">Contact</a></li>
+                </ul>
+            </nav>
+			</div>
+		</address>
+</footer>
+
+</div>
+
+</body>
+
+</html>
