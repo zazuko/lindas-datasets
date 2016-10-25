@@ -130,9 +130,9 @@
     dcterms:creator <org/Zazuko>;
     dcterms:publisher  <org/FSO>;
     dcterms:source <eCH0071-Dist>;
-    dcterms:issued "2016-04-10"^^xsd:date; # date of publication of the source
-    dcterms:created "2016-04-10"^^xsd:date;
-    dcterms:modified "2016-04-10"^^xsd:date;
+    dcterms:issued "2016-07-01"^^xsd:date; # date of publication of the source
+    dcterms:created "2016-07-01"^^xsd:date;
+    dcterms:modified "2016-07-01"^^xsd:date;
     doap:repository [
         a doap:GitRepository ;
         doap:browse <https://github.com/zazuko/fso-lod> ;
