@@ -12,8 +12,9 @@
 @prefix schema: <http://schema.org/>.
 @prefix time: <http://www.w3.org/2006/time#>.
 @prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix duv: <http://www.w3.org/ns/duv#> .
 
-<> a void:DatasetDescription;
+<datasets> a void:DatasetDescription;
     dcterms:title "VoID Description of data.admin.ch Datasets"@en;
     dcterms:creator <org/Zazuko>;
     foaf:topic <dataset/meta>, <dataset/eCH0071>, <dataset/STATPOP-2011>, <dataset/ld-didok>, <dataset/UBD28>, <dataset/UBD66>, <dataset/outbreak>, <dataset/stapfer-enquete>, <dataset/e-relocation>, <dataset/govagencies> .
@@ -112,6 +113,7 @@
         doap:location <https://github.com/zazuko/lindas-datasets.git> 
     ] ;
     void:sparqlEndpoint <http://data.admin.ch/sparql>;
+    duv:hasUsage <dataset/meta-usage> ;
 .
 
 <dataset/eCH0071> a void:Dataset, dcat:Dataset;
