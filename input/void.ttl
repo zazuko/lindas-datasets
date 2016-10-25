@@ -125,7 +125,7 @@
     dcterms:title "Liste historisée des communes"@fr;
     dcterms:title "Elenco storicizzato dei Comuni"@it;
     dcterms:title "Historicized Municipality Register"@en;
-    dcterms:description "RDF transformation of the Historicized Municipality Register"@en;
+    dcterms:description "The Historicized Municipality Index is currently the largest available dataset listing all Swiss municipalities and their development over time. Now also available as Linked Data in RDF"@en ;
     dcterms:description "Das Bundesamt für Statistik pflegt die Liste der Gemeinden in der Schweiz im Laufe der Zeit. Das bisher als XML und CSV publizierte Gemeindeverzeichnis ist nun auch als Linked Data verfügbar. Jede Gemeinde und jede historische Version der Gemeinde hat entsprechende URIs und kann somit eindeutig referenziert werden."@de ;
     dcterms:creator <org/Zazuko>;
     dcterms:publisher  <org/FSO>;
