@@ -118,9 +118,8 @@
 
 <dataset/eCH0071> a void:Dataset, dcat:Dataset;
     foaf:homepage <http://data.admin.ch/>;
-    foaf:page <http://www.bfs.admin.ch/bfs/portal/de/index/infothek/nomenklaturen/blank/blank/gem_liste/02.html>;
-    foaf:page <http://www.bfs.admin.ch/bfs/portal/de/index/infothek/nomenklaturen/blank/blank/gem_liste/01.html>;
-    foaf:page <http://www.bfs.admin.ch/bfs/portal/de/index/news/publikationen.html?publicationID=2754>;
+    foaf:page <https://www.bfs.admin.ch/bfs/de/home/grundlagen/amtl-gemeindeverzeichnis/historisiertes-gemeindeverzeichnis.html>;
+    foaf:page <https://www.bfs.admin.ch/bfs/de/home/grundlagen/amtl-gemeindeverzeichnis/historisiertes-gemeindeverzeichnis.assetdetail.343643.html>;
     dcterms:title "Historisiertes Gemeindeverzeichnis"@de;
     dcterms:title "Liste historisée des communes"@fr;
     dcterms:title "Elenco storicizzato dei Comuni"@it;
