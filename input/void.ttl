@@ -103,6 +103,7 @@
     dcterms:title "Metadaten zu LINDAS & data.admin.ch"@de;
     dcterms:title "LINDAS & data.admin.ch meta data"@en;
     dcterms:description "This graph contains all meta data about datasets provided by LINDAS and related projects like data.admin.ch."@en;
+    dcterms:description "Getreu dem \"Eat your own dogfood\" Mantra werden die Metadaten der LINDAS Prototypen als RDF zur Verfügung gestellt, damit externe einfach einen Eindruck von den zur Verfügung stehenden Datensätzen machen können."@de ;
     dcterms:publisher <org/Zazuko>;
     dcterms:issued "2016-05-23"^^xsd:date; # date of publication of the source
     dcterms:created "2016-05-23"^^xsd:date;
@@ -202,7 +203,7 @@
 
 <dataset/UBD28> a void:Dataset;
     dcterms:title "Luftqualität Schweiz (Jahreswerte)"@de ;
-    dcterms:description "Messdaten (Jahreswerte) von nationalen, kantonalen und kommunalen Messstationen für Luftschadstoffe, zusammengestellt durch die Schweizerische Gesellschaft der Lufthygiene-Fachleute (Cercl'Air) und das BAFU"@de ;
+    dcterms:description "Messdaten (Jahreswerte) von nationalen, kantonalen und kommunalen Messstationen für Luftschadstoffe, zusammengestellt durch die Schweizerische Gesellschaft der Lufthygiene-Fachleute (Cercl'Air) und das BAFU. Mit den Umwelt Basisdaten stellt das Bundesamt für Umwelt diverse Datensätze zur Verfügung, die Auskunft über die Belastung der Umwelt in der Schweiz geben. Exemplarisch stehen zwei Datensätze als Linked Data (Data Cube Vokabular) zur Verfügung. Diese können über SPARQL abgefragt und mit Webbasiserten Werkzeugen einfach konsumiert werden."@de ;
     dcterms:publisher <org/FOEN> ;
     dcat:contactPoint "rudolf.weber@bafu.admin.ch";
     dcat:theme  "Raum"@de, "Umwelt"@de;
